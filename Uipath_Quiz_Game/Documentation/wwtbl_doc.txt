@@ -1,0 +1,30 @@
+--How to install---
+
+1.)Move all containing folder to a computer
+2.)Ensure you have also downloaded the sound resources into a sepicific folder in your machine
+You can download the sound resources from 
+https://drive.google.com/drive/folders/10BZAdsXgtOng07whPiYPf6ZKUSw-QZLY?usp=sharing
+3.)Also ensure you reference the specific folder to the sound resources in your local computer on the config file.
+4.)Run the game from Main if you are on studio or hit the publish button to move the project to your ochestrator.
+5.)Play Game and have fun...
+
+
+-------------------------------------------------------------------------------------
+The wwtbal (Who wants to be a Logian ) is a questionaire game built  using uipath form and http request activities. The concept of the game  is basicallly a questionaire game . first the bot displays a custom input dialog which enables it retreive the users request .This user request simply contains the difficulty, category and number of questions the user would love to answer. The bot utilizes an api to return a pool of randomized questions based on the users request and displays this question to the user in a uipath form. if the user gets the answer correctly a cheering sound is played and if he or she doesn't a different sound is played. at the end the users final score is calculated and if he or she exceeds the 80% then the user passed the test.
+
+To enjoy the sounds, Please ensure you download all the related audio files from https://drive.google.com/drive/folders/10BZAdsXgtOng07whPiYPf6ZKUSw-QZLY?usp=sharing
+
+Please allow all blocked content on your custom input dialog to enable the html and css function properly
+
+Cheers and Happy Playing!!!
+
+ Follow the documentation in the documentation folder.
+
+Proposed upgrade : to enable the bot generate a certficate upon completion of the test and sending this certificate to the users email.
+Encourage me to make more cool stuff , please Don't forget to subscribe to my youtube channel 
+
+Developer: David Oku
+Master Of Logic
+email: okuebukadavid@gmail.com
+Linked In: https://www.linkedin.com/in/david-oku-16576293/
+Youtube : https://www.youtube.com/channel/UCuFlXTvrman7XbcmAbA5WZw

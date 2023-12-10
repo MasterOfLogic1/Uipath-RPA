@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Who wants to be a Logian</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+
+  <body>
+
+  <div class="form">
+      <div class="title">Play WWTBAL!</div>
+      <div class="subtitle">Let's play who wants to be a Logian!</div>
+      <p class="Detail">Your First game powered by Uipaths RPA</p>
+      <div class="input-container ic1">
+      <label for="NumberOfQuestions"class="subtitle">Number of Questions:</label>
+      <input type="number" id="NumberOfQuestions" min="1" name="NumberOfQuestions" value="1">
+      </div>
+
+      <div class="input-container ic2">
+          <label for="Difficulty" class="subtitle">Choose a Difficulty:</label>
+          <select id="Difficulty" name="Difficulty">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+          </select>
+      </div>
+
+      <div class="input-container ic2">
+         <!–– the numbers represent what the api returns ––>
+          <label for="Category" class="subtitle">Category:</label>
+          <select id="Category" name="Category">
+          <option value="9">General Knowledge</option>
+          <option value="10">Books</option>
+          <option value="11">Film</option>
+          <option value="12">Music</option>
+          <option value="13">Musical & Theatre</option>
+          <option value="14">Television</option>
+          <option value="15">Video Games</option>
+          <option value="16">Board Games</option>
+          <option value="17">Science & Nature</option>
+          <option value="18">Computers</option>
+          <option value="19">Mathematics</option>
+          <option value="20">Mythology</option>
+          <option value="21">Sports</option>
+          <option value="22">Geography</option>
+          <option value="23">History</option>
+          <option value="24">Politics</option>
+          <option value="25">Arts</option>
+          <option value="26">Celebirty</option>
+          <option value="27">Animals</option>
+          <option value="28">Vehicles</option>
+          </select>
+      </div>
+
+          <button onclick="PlayGame()" class="submit">Play</button>
+
+          <button onclick="QuitGame()" class="quit">Quit Game</button>
+    </div>
+
+
+          <script type="text/javascript">
+          function PlayGame(){
+            var Difficulty = document.getElementById("Difficulty").value;
+            var Category = document.getElementById("Category").value;
+            var NumberOfQuestions = document.getElementById("NumberOfQuestions").value;
+            window.external.setResult("True"+","+Difficulty + "," + Category+","+NumberOfQuestions);
+            return true;
+          }
+
+           function QuitGame(){
+            window.external.setResult("False");
+            return true;
+          }
+            
+          </script>
+  </body>
+  </html>
