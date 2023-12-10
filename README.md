@@ -1,0 +1,7 @@
+Hyperautomation is #1 trend on Gartner's list of Top 10 Strategic Technology Trends for 2020. According to a Mckinsey study, 50% of the work activities can be automated. 93% of organizations say that automation kickstarts digital transformation. At UiPath, we deliver the most advanced hyperautomation platform to automate mundane, error-prone processes, so you can focus on the high-value work.
+
+The UiPath Enterprise RPA Platform automates business processes end to end. All the way from discovering automation opportunities, to building and managing automation, and also measuring automation outcomes. Virtually anything across verticals and functions can be automated including Financial process to pay, inventory management, IT provisioning and support, HR payroll and benefits administration, and customer service processes.
+
+Whether you are just starting out or scaling automations in your enterprise, the entry and/or developer packs will help you fast track your journey with key UiPath Enterprise RPA platform components. Studio is the design environment to easily build automations, UiPath Robots run the automations, with the flexibility of attended or unattended modes, and Orchestrator securely controls, manages, and monitors the automation operations. 
+
+If you are an existing UiPath customer, please reach out to your sales rep directly for purchase. Please also check out the always free UiPath community edition: https://www.uipath.com/start-trial
