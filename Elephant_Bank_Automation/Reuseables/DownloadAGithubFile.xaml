@@ -1,0 +1,283 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadAGithubFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="gitHubUrl" Type="InArgument(x:String)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <this:DownloadAGithubFile.gitHubUrl>
+    <InArgument x:TypeArguments="x:String" />
+  </this:DownloadAGithubFile.gitHubUrl>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>850.4,974.4</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DownloadAGithubFile_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DownloadAGithubFile" sap:VirtualizedContainerService.HintSize="496,909.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="pageLoaded" />
+      <Variable x:TypeArguments="x:String" Name="fileNameToDownload" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[fileNameToDownload]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[Path.GetFileName(gitHubUrl)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Remove Resiude" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Reuseables\DeleteFile.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Path.Combine(in_Config("BrowserDownloadFolderPath").ToString(),fileNameToDownload)]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Opening &quot;+ gitHubUrl]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Opens A gitHub  Url" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="False" OpenMode="Always" ScopeGuid="e83b8797-d93c-4a97-8e81-7701880e4a6f" UserDataFolderMode="DefaultFolder" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,732" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Waiting for &quot;+ gitHubUrl+&quot; to load&quot;]" />
+            <ui:TimeoutScope DisplayName="Timeout Scope" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="TimeoutScope_1" ThrowExceptionAfter="[TimeSpan.FromMilliseconds(10)]" TimeoutMessage="[&quot;It took to long to load te page for &quot;+ gitHubUrl]">
+              <ui:TimeoutScope.Body>
+                <ActivityAction x:TypeArguments="Activity">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,391.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[pageLoaded]" DisplayName="While" sap:VirtualizedContainerService.HintSize="387.2,279.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                      <ui:InterruptibleWhile.Body>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState DisplayName="Check App State 'View raw'" Exists="[pageLoaded]" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e83b8797-d93c-4a97-8e81-7701880e4a6f" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable BrowserURL="https://github.com/MasterOfLogic1/CaseStudy/blob/main/testcr.xlsx" CvTextArea="1121, 510, 74, 16" CvTextArgument="View raw" CvType="Text" DesignTimeRectangle="1115, 345, 69, 23" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'View raw'" FullSelectorArgument="&lt;webctrl aaname='View raw' visibleinnertext='View raw' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='*CaseStudy/testcr.xlsx*' /&gt;&lt;webctrl aaname='View raw' visibleinnertext='View raw' check:text='View raw' /&gt;" Guid="4aea0257-5d0f-4f65-b32c-73cc0e6e3f7e" InformativeScreenshot="765074da8f3cb224ccbd9713a114a03f.png" ScopeSelectorArgument="[string.Format(&quot;&lt;html app='chrome.exe' title='*CaseStudy/{0}*' /&gt;&quot;, fileNameToDownload)]" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </ui:InterruptibleWhile.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InterruptibleWhile>
+                  </Sequence>
+                </ActivityAction>
+              </ui:TimeoutScope.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:TimeoutScope>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Clicked download&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View raw'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e83b8797-d93c-4a97-8e81-7701880e4a6f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://github.com/MasterOfLogic1/CaseStudy/blob/main/testcr.xlsx" CvTextArea="1121, 515, 74, 16" CvTextArgument="View raw" CvType="Text" DesignTimeRectangle="1124, 510, 69, 23" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'View raw'" FullSelectorArgument="&lt;webctrl aaname='View raw' visibleinnertext='View raw' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='View raw' parentid='repo-content-pjax-container' tag='A' type='' class='Link__StyledLink-sc-14289xe-0 GCHqa' check:innerText='View raw' /&gt;" Guid="c238b44e-637d-4087-ae16-64b4ae5c0a56" InformativeScreenshot="05694ebc6580adf9fa42ab3061560b29.png" ScopeSelectorArgument="[string.Format(&quot;&lt;html app='chrome.exe' title='*CaseStudy/{0}*' /&gt;&quot;, fileNameToDownload)]" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="56fb3ab1dcf61c98af4df7730006a7a1.jpg" Selector="&lt;html app='chrome.exe' title='*CaseStudy*' /&gt;" Title="CaseStudy/testcr.xlsx at main · MasterOfLogic1/CaseStudy" Url="[gitHubUrl]" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:TimeoutScope DisplayName="Timeout Scope" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TimeoutScope_2" ThrowExceptionAfter="[TimeSpan.FromMilliseconds(10)]" TimeoutMessage="[&quot;clicked download but file&quot;+fileNameToDownload+&quot; did not download &quot;]">
+      <ui:TimeoutScope.Body>
+        <ActivityAction x:TypeArguments="Activity">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,171.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[pageLoaded]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Not File.Exists(Path.Combine(in_Config(&quot;BrowserDownloadFolderPath&quot;).ToString(),fileNameToDownload))" />
+              </ui:InterruptibleWhile.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InterruptibleWhile>
+          </Sequence>
+        </ActivityAction>
+      </ui:TimeoutScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:TimeoutScope>
+    <ui:CopyFile ContinueOnError="{x:Null}" Destination="[Path.Combine(in_Config(&quot;TempsFolderPath&quot;).ToString(),fileNameToDownload)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="433.6,155.2" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[Path.Combine(in_Config(&quot;BrowserDownloadFolderPath&quot;).ToString(),fileNameToDownload)]" />
+  </Sequence>
+</Activity>
