@@ -1,0 +1,354 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="850.4,2996.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="725.6,2932" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="config" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtProcessed" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="we load our configuration file which contains the settings required for this process to run i. emails of people to be notified . " DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="663.2,173.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Project\InitAllSettings.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
+          <Literal x:TypeArguments="x:String">Data\Config.xlsx</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
+          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;,&quot;Constants&quot;}" />
+        </InArgument>
+        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
+          <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
+        </OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <TryCatch sap2010:Annotation.AnnotationText="Now we proceed to conclude the rest of the process" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="663.2,2606.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <Sequence sap2010:Annotation.AnnotationText="Now we proceed to conclude the rest of the process" DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="626.4,2344" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="We create required folders for this process to be executed if these folders dont exist.&#xD;&#xA;The folders would be created in C:\RPA\DeskStonesFx_WorkDirectory of this computer&#xD;&#xA;&#xD;&#xA;1.) Incoming is where you should drop your input file&#xD;&#xA;2.) Archives is where you retrieve the ouput&#xD;&#xA;&#xD;&#xA;If ou are rnnng this process for the first timein your machine these folders would not exists but th proess would create them and come to a stop so youcanload the incoming folder with the input file" DisplayName="Project\SetupEnvironment.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="564,317.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Project\SetupEnvironment.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="config">
+                <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
+              </InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="ArrayOfFolders">
+                <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{config(&quot;IncomingFolderPath&quot;).ToString(),config(&quot;ArchivesFolderPath&quot;).ToString()}" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Here the robot reads the input file in incoming" DisplayName="ReadForexRequestFromDrive.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="564,144.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Project\ReadForexRequestFromDrive.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt">
+                <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt" />
+              </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="requestedFilePath">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(config(&quot;IncomingFolderPath&quot;).ToString(),&quot;Input.xlsx&quot;)" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <If Condition="[dt IsNot Nothing AndAlso dt.Rows.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="564,1658.4" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="530.4,1295.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetActualRateOnFxApp.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="487.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Project\GetActualRateOnFxApp.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">
+                      <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt" />
+                    </InArgument>
+                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="dtProcessed">
+                      <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtProcessed" />
+                    </InOutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendCustomFinalEmail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="487.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Project\SendCustomFinalEmail.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">
+                      <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtProcessed" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="outputFilePath">
+                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.Combine(config(&quot;ArchivesFolderPath&quot;).ToString(),&quot;Transact&quot;+Now.ToString(&quot;ddMMMyyyy_hh_mm&quot;)+&quot;.xlsx&quot;)" />
+                    </InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
+                    </InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Notify customers of their transactions" DataTable="[dtProcessed]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="487.2,898.4" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                  <ui:ForEachRow.Body>
+                    <ActivityAction x:TypeArguments="sd:DataRow">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="453.6,679.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If Condition="[row(&quot;Exchange_Response&quot;).Equals(&quot;Success&quot;)]" sap:VirtualizedContainerService.HintSize="410.4,589.6" sap2010:WorkflowViewState.IdRef="If_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376.8,203.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send_Email_Using_Outlook" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Project\Send_Email_Using_Outlook.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;ProcessName&quot;).ToString()+&quot; Transaction Notification Successfull &quot;+ Now.ToString(&quot;dd MMM yyyy hh:mm:ss&quot;)" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MailMessage">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="File.ReadAllText(&quot;Data\EmailTemplates\Customer_Notify.txt&quot;).Replace(&quot;CustomerName&quot;,row(&quot;Customer_Name&quot;).ToString()).Replace(&quot;TransacationId&quot;,row(&quot;Transacation_id&quot;).ToString()).Replace(&quot;CustomerBalance&quot;,row(&quot;Customer_Takes&quot;).ToString())" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TitleOfEmail">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;ProcessName&quot;).ToString()+&quot; Transaction Notification Successfull &quot;+ Now.ToString(&quot;dd MMM yyyy hh:mm:ss&quot;)" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MailRecipientsTo">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Customer_Email&quot;).ToString()" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MailRecipientsCc">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="s:String[]" x:Key="in_MailAttachments" />
+                                  <InArgument x:TypeArguments="x:Boolean" x:Key="isBodyHtml">
+                                    <Literal x:TypeArguments="x:Boolean" />
+                                  </InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376.8,203.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send_Email_Using_Outlook" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Project\Send_Email_Using_Outlook.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;ProcessName&quot;).ToString()+&quot; Transaction Notification Declined &quot;+ Now.ToString(&quot;dd MMM yyyy hh:mm:ss&quot;)" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MailMessage">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="File.ReadAllText(&quot;Data\EmailTemplates\Customer_Decline.txt&quot;).Replace(&quot;CustomerName&quot;,row(&quot;Customer_Name&quot;).ToString()).Replace(&quot;TransacationId&quot;,row(&quot;Transacation_id&quot;).ToString()).Replace(&quot;CustomerBalance&quot;,row(&quot;Customer_Takes&quot;).ToString())" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_TitleOfEmail">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;ProcessName&quot;).ToString()+&quot; Transaction Notification Declined &quot;+ Now.ToString(&quot;dd MMM yyyy hh:mm:ss&quot;)" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MailRecipientsTo">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Customer_Email&quot;).ToString()" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_MailRecipientsCc">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
+                                  </InArgument>
+                                  <InArgument x:TypeArguments="s:String[]" x:Key="in_MailAttachments" />
+                                  <InArgument x:TypeArguments="x:Boolean" x:Key="isBodyHtml">
+                                    <Literal x:TypeArguments="x:Boolean" />
+                                  </InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:ForEachRow.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:ForEachRow>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Throw Exception="[New SystemException(&quot;No transactions to process&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="629.6,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send Status Mail Of Failure" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Project\Send_Email_Using_Outlook.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_MailSubject">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;ProcessName&quot;).ToString()+&quot; Failed &quot;+Now.ToString(&quot;ddMMM yyyy hh:mm:ss tt&quot;)" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_MailMessage">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;The process failed because &quot;+ exception.Message" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TitleOfEmail">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;ProcessName&quot;).ToString()+&quot; Failed &quot;+Now.ToString(&quot;ddMMM yyyy hh:mm:ss tt&quot;)" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_MailRecipientsTo">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Status_Email&quot;).ToString()" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_MailRecipientsCc">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;Status_EmailCc&quot;).ToString()" />
+                </InArgument>
+                <InArgument x:TypeArguments="s:String[]" x:Key="in_MailAttachments" />
+                <InArgument x:TypeArguments="x:Boolean" x:Key="isBodyHtml">
+                  <Literal x:TypeArguments="x:Boolean" />
+                </InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

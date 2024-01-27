@@ -1,0 +1,19 @@
+About:
+
+It's an FX processing Bot. It reads an excel containing transactions and determines if a customer transaction would be profitable for the FX company.
+
+It achieves this by checking the exchange rate against an online fx app. if the transaction is profitable the customer gets an email that their transaction is successful.
+
+Finally the fx processor gets and email and attachment of all transactions whether successful or failed 
+
+How to Run:
+
+1.) Download the excel file Input.xlsx and the zip file.
+
+2.) Extract project from zipe file.
+
+3.) Open Main.xaml
+
+4.) Press the run button on your studio the process runs and creates all the folders you need. Please note it would stop with the error saying input file not found.
+
+5.) Now place the excel (input.xlsx) in C:\RPA\DeskStonesFx_WorkDirectory\Incoming and hit run again
