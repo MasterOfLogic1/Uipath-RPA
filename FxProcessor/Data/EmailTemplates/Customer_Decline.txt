@@ -1,0 +1,8 @@
+Dear CustomerName
+
+Your Transaction was Declined
+ 
+Transaction Id : TransacationId
+Amount Recieved : CustomerBalance
+
+Qalhata Fx

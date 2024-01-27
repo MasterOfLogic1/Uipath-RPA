@@ -1,0 +1,451 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="RetrieveRealValueFromApp" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="currencyApp" Type="InOutArgument(ui:UiElement)" />
+    <x:Property Name="currencyBuy" Type="InArgument(x:String)" />
+    <x:Property Name="currencySell" Type="InArgument(x:String)" />
+    <x:Property Name="dtProcessed" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="customer_Email" Type="InArgument(x:String)" />
+    <x:Property Name="Customer_FullName" Type="InArgument(x:String)" />
+    <x:Property Name="Transaction_id" Type="InArgument(x:String)" />
+    <x:Property Name="Customer_Buy_Amount" Type="InArgument(x:String)" />
+    <x:Property Name="Customer_Sell_Amount" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>850.4,944</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>RetrieveRealValueFromApp_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="RetrieveRealValueFromApp" sap:VirtualizedContainerService.HintSize="643.2,879.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="resultStillVisible" />
+      <Variable x:TypeArguments="x:Boolean" Name="appLoaded" />
+      <Variable x:TypeArguments="x:Double" Name="actual_Buy_Amount" />
+      <Variable x:TypeArguments="x:String" Name="exchangeResponse" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch sap2010:Annotation.AnnotationText="Here we try to get the exchange rate from the app but in the event that something goes wrong we long response and set the exchange value to zero" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="580.8,767.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Currency Calculator" sap:VirtualizedContainerService.HintSize="642.4,3572" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[currencyApp]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[currencyApp]" ScopeGuid="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608.8,3435.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Int32" Name="waitTime" />
+                  <Variable x:TypeArguments="x:String" Name="result" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NCheck Action="Uncheck" DisplayName="Uncheck Show Popular Currency" sap:VirtualizedContainerService.HintSize="546.4,157.6" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Timeout="[waitTime]" Version="V3">
+                  <uix:NCheck.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.calculator.net/currency-calculator.html" CvElementArea="363, 604, 27, 27" CvTextArea="398, 607, 314, 22" CvTextArgument="Show most popular currencies only" CvType="CheckBox" DesignTimeRectangle="365, 605, 346, 24" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl id='standard' tag='TABLE' /&gt;&lt;webctrl aaname='*Show*most*popular*currencies*only*' parentid='ccmajorccsetting' /&gt;" Guid="74d9bb3f-4974-474a-bcd7-7c8605f644fc" ImageBase64="" InformativeScreenshot="1ef34964a17c31c18dd56c7cc7219353.png" ScopeSelectorArgument="[currencyApp.Selector.Text]" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NCheck.Target>
+                </uix:NCheck>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Unchecked show popular currency&quot;]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Enter Sell Amount" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="546.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Text="[Customer_Buy_Amount.ToString()]" Timeout="[waitTime]" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.calculator.net/currency-calculator.html" CvElementArea="364, 401, 290, 40" CvType="InputBox" DesignTimeRectangle="365, 401, 288, 38" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'100,100'" FullSelectorArgument="&lt;webctrl id='standard' tag='TABLE' /&gt;&lt;webctrl id='eamount' tag='INPUT' name='eamount' /&gt;" Guid="19bbbdb9-5131-4be7-8ba4-36804bd85cdd" InformativeScreenshot="cc016f1f038b24907bd03433e33b2b83.png" ScopeSelectorArgument="[currencyApp.Selector.Text()]" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Set sell amount to &quot;+  Customer_Buy_Amount]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Sell Currency" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="546.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Text="[currencyBuy]" Timeout="[waitTime]" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.calculator.net/currency-calculator.html" CvTextArea="374, 440, 235, 20" CvType="Text" DesignTimeRectangle="365, 434, 457, 36" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'USD: United'" FullSelectorArgument="&lt;webctrl id='standard' tag='TABLE' /&gt;&lt;webctrl id='efrom' tag='SELECT' name='efrom' /&gt;" FuzzySelectorArgument="&lt;webctrl id='standard' tag='TABLE' /&gt;&lt;webctrl id='efrom' type='' tag='SELECT' class='' aaname='' /&gt;" Guid="e8d465e6-fc32-4b4f-ac6a-49b23a79afb9" InformativeScreenshot="33729d18dc79722655e0a7a9fe5fd373.png" ScopeSelectorArgument="[currencyApp.Selector.Text]" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Set sell currency to &quot;+ currencyBuy]" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Buy Currency" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="546.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Text="[currencySell]" Timeout="[waitTime]" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.calculator.net/currency-calculator.html" CvTextArea="374, 485, 97, 20" CvType="Text" DesignTimeRectangle="365, 478, 457, 36" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'EUR: Euro'" FullSelectorArgument="&lt;webctrl id='standard' tag='TABLE' /&gt;&lt;webctrl id='eto' tag='SELECT' name='eto' /&gt;" Guid="4d840c6b-9fcb-4b71-b1db-a20aa6c71dff" InformativeScreenshot="339a85c4ebb84448538c94f9a9520e0e.png" ScopeSelectorArgument="[currencyApp.Selector.Text]" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Set buy currency to &quot;+ currencySell]" />
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Calculate'" sap:VirtualizedContainerService.HintSize="546.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.calculator.net/currency-calculator.html?eamount=100.2&amp;efrom=USD&amp;eto=EUR&amp;ccmajorccsettingbox=1&amp;type=1&amp;x=Calculate" CvTextArea="381, 742, 93, 20" CvTextArgument="Calculate" CvType="Text" DesignTimeRectangle="356, 546, 171, 51" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Calculate'" FullSelectorArgument="&lt;webctrl id='standard' tag='TABLE' /&gt;&lt;webctrl tag='INPUT' type='submit' aaname='Calculate' /&gt;" Guid="45dbde73-c56a-4057-94a8-c40d8be0080d" ScopeSelectorArgument="[currencyApp.Selector.Text]" SearchSteps="Selector" Version="V2" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="546.4,144" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;clicked calculate&quot;]" />
+                <uix:NGetText DisplayName="Get Text '100.2 USD'" sap:VirtualizedContainerService.HintSize="546.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" TextString="[result]" Version="V3">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.calculator.net/currency-calculator.html?eamount=100&amp;efrom=USD&amp;eto=EUR&amp;ccmajorccsettingbox=1&amp;type=1&amp;x=Calculate" DesignTimeRectangle="271, 446, 910, 66" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'100.2 USD'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='*{0}*{1}*' innertext='*{0}*{1}*' parentid='content' /&gt;&quot;, currencyBuy, currencySell)]" Guid="f222b3fe-0f82-4954-aa83-758f7cadc541" InformativeScreenshot="fd5b05555b77af9129033d0b545085c3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Currency*Calculator*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NGetText.Target>
+                </uix:NGetText>
+                <Assign sap2010:Annotation.AnnotationText="Get Real Value Here" sap:VirtualizedContainerService.HintSize="546.4,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Double">[actual_Buy_Amount]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Double">[CDbl(result.Replace(currencySell,"=").Split("="c)(1))]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <ui:IfElseIf sap2010:Annotation.AnnotationText="We only sell if requested person buys at a higher price " DisplayName="Else If" sap:VirtualizedContainerService.HintSize="546.4,650.4" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+                  <ui:IfElseIf.ConditionBlocks>
+                    <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                      <ui:IfElseIfBlock BlockType="If" Condition="[CDbl(Customer_Sell_Amount) &gt; actual_Buy_Amount]">
+                        <ui:IfElseIfBlock.Then>
+                          <Sequence DisplayName="Proceed to sell as we would make profit" sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[exchangeResponse]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">Success</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ui:IfElseIfBlock.Then>
+                      </ui:IfElseIfBlock>
+                      <ui:IfElseIfBlock BlockType="Else">
+                        <ui:IfElseIfBlock.Then>
+                          <Sequence DisplayName="Dont selll" sap:VirtualizedContainerService.HintSize="496,193.6" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[exchangeResponse]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">Failed</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ui:IfElseIfBlock.Then>
+                      </ui:IfElseIfBlock>
+                    </sc:BindingList>
+                  </ui:IfElseIf.ConditionBlocks>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:IfElseIf>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Transaction_id,Customer_FullName, currencySell+&quot;-&quot;+currencyBuy,&quot;R&quot;, currencySell+&quot; &quot;+Customer_Sell_Amount,currencyBuy+&quot; &quot;+Customer_Buy_Amount, currencySell+&quot; &quot;+CStr(actual_Buy_Amount),exchangeResponse,customer_Email}]" DataTable="[dtProcessed]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="546.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAMUExURQgICDNmmY6NkP///zGrQCAAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAS0lEQVQ4T83OQQoAIAhE0bL737nAjRWjI4T0F256mE2CGDCcWNBBXwHcO9BW+9QTKgGMBna5zuwN9klnFsBocC8/vigAMA74BUBkAproCCHOFmR3AAAAAElFTkSuQmCC" InformativeScreenshot="a6f265463fcc554afedc061757be157b.jpg" Title="Currency Calculator" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="547.2,558.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="540.8,488" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="478.4,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Double">[actual_Buy_Amount]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Double">0</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[exchangeResponse]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[exception.Message]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{Transaction_id,Customer_FullName, currencySell+&quot;-&quot;+currencyBuy,&quot;R&quot;, currencySell+&quot; &quot;+Customer_Sell_Amount,currencyBuy+&quot; &quot;+Customer_Buy_Amount, currencySell+&quot; &quot;+CStr(actual_Buy_Amount),exchangeResponse,customer_Email}]" DataTable="[dtProcessed]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="478.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+      <TryCatch.Finally>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Currency Calculator" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[currencyApp]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[currencyApp]" ScopeGuid="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,334.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Int32" Name="waitTime" />
+                  <Variable x:TypeArguments="x:String" Name="result" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="387.2,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://www.calculator.net/currency-calculator.html" Version="V3" />
+                <ui:TimeoutScope sap2010:Annotation.AnnotationText="Wait 10 secs for currency app to load" DisplayName="Timeout Scope" sap:VirtualizedContainerService.HintSize="387.2,96.8" sap2010:WorkflowViewState.IdRef="TimeoutScope_2" ThrowExceptionAfter="[TimeSpan.FromSeconds(10)]" TimeoutMessage="Too too long to refresh after data entry">
+                  <ui:TimeoutScope.Body>
+                    <ActivityAction x:TypeArguments="Activity">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[Not resultStillVisible AndAlso appLoaded]" DisplayName="While" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_2">
+                          <ui:InterruptibleWhile.Body>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,235.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NCheckState DisplayName="Check Calculator Loaded " Exists="[appLoaded]" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Timeout="3" Version="V3">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.calculator.net/currency-calculator.html" CvTextArea="269, 300, 314, 36" CvTextArgument="Currency Calculator" CvType="Text" DesignTimeRectangle="271, 205, 260, 28" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl tag='IMG' aaname='Calculator.net' alt='Calculator.net' parentid='logo' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='IMG' aaname='Calculator.net' alt='Calculator.net' parentid='logo' /&gt;" Guid="e594f400-e62b-4f91-b182-6bd7fb4b1bce" InformativeScreenshot="26b8630c4d47595f5e754493677007e1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Currency*Calculator*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                              <uix:NCheckState DisplayName="Check Result Visible" Exists="[resultStillVisible]" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="ced7efe6-3f0b-43e5-9d2c-53901a2a2c10" Version="V3">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.calculator.net/currency-calculator.html?eamount=100.2&amp;efrom=USD&amp;eto=EUR&amp;ccmajorccsettingbox=1&amp;type=1&amp;x=Calculate" DesignTimeRectangle="271, 446, 910, 66" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'100.2 USD'" FullSelectorArgument="&lt;html app='chrome.exe' title='*Currency*Calculator*' /&gt;&lt;webctrl tag='H2' aaname='Result' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' class='verybigtext' aaname='100.2 USD =  EUR100.2 EUR =  USD' check:innerText='100.2 USD = 92.2348 EUR&amp;#xD;&amp;#xA;100.2 EUR = 108.85306 USD' /&gt;" Guid="ef384aa5-b02a-4a25-9312-4d4b2fc9a821" InformativeScreenshot="6399bcd5bdae8fe8ea9c6954fd7d8219.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Currency*Calculator*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                </uix:NCheckState.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NCheckState>
+                            </Sequence>
+                          </ui:InterruptibleWhile.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:InterruptibleWhile>
+                      </Sequence>
+                    </ActivityAction>
+                  </ui:TimeoutScope.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:TimeoutScope>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAMUExURQgICDNmmY6NkP///zGrQCAAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAS0lEQVQ4T83OQQoAIAhE0bL737nAjRWjI4T0F256mE2CGDCcWNBBXwHcO9BW+9QTKgGMBna5zuwN9klnFsBocC8/vigAMA74BUBkAproCCHOFmR3AAAAAElFTkSuQmCC" InformativeScreenshot="a6f265463fcc554afedc061757be157b.jpg" Title="Currency Calculator" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Finally>
+    </TryCatch>
+  </Sequence>
+</Activity>
