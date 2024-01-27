@@ -1,8 +1,0 @@
-Dear CustomerName
-
-Your Transaction was successful
- 
-Transaction Id : TransacationId
-Amount Recieved : CustomerBalance
-
-Qalhata Fx
