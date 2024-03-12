@@ -204,3 +204,5 @@ End If
 	dt.Clear()
 
 '---------------------------------------------------------------------------
+'-------Convert datarow to a dictionary------------
+row.Table.Columns.Cast(Of DataColumn)().Zip(row.ItemArray, Function(c, v) New With {.ColumnName = c.ColumnName, .Value = v}).ToDictionary(Function(item) item.ColumnName, Function(item) item.Value)																																											
