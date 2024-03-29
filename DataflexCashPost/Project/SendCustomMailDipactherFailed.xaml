@@ -1,0 +1,194 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SendStatusMailWithMailBatcher" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:hm="clr-namespace:HelpAtHome_RPA_Utilities.Messaging;assembly=HelpAtHome RPA Utilities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="generalErrorMessage" Type="InArgument(x:String)" />
+    <x:Property Name="dtErrorDetail" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <this:SendStatusMailWithMailBatcher.dtErrorDetail>
+    <InArgument x:TypeArguments="sd:DataTable" />
+  </this:SendStatusMailWithMailBatcher.dtErrorDetail>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>850,1177</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SendStatusMailWithMailBatcher_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="60">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Activities.System.Compression.Zip</x:String>
+      <x:String>UiPath.Activities.System.Encode</x:String>
+      <x:String>UiPath.Activities.System.Compression.Workflow</x:String>
+      <x:String>HelpAtHome_RPA_Utilities.Project</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>HelpAtHome_RPA_Utilities.Messaging</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="100">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>HelpAtHome RPA Utilities</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SendStatusMailWithMailBatcher" sap:VirtualizedContainerService.HintSize="450,1112" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="mailBody" />
+      <Variable x:TypeArguments="x:String" Name="errorMessage" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="This invoke code generates table in html and avoid loops while doing so, hence this a faster method when we have larger tables" Code="Try&#xD;&#xA;'This invoke code generates table in html and avoid loops while doing so, hence this a faster method when we have larger tables&#xD;&#xA;If dt IsNot Nothing AndAlso dt.Rows.Count &gt; 0 Then&#xD;&#xA;Console.WriteLine(&quot;Converting datatables into html tables &quot;)&#xD;&#xA;Dim builder As New System.Text.StringBuilder&#xD;&#xA;'add html opening tag Required!&#xD;&#xA;Dim htmlOpeningTag As String = &quot;&lt;html&gt;&lt;body style=&quot;&quot;background-color: white; color:black;&quot;&quot;&gt;&quot;&#xD;&#xA;builder.Append(htmlOpeningTag)&#xD;&#xA;'incase you want to add an opening message before the table&#xD;&#xA;Dim messageBeforeTable As String = &quot;&lt;p&gt;Hello Team,&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;p&gt; &quot;+generalErrorMessage+&quot; : &lt;/p&gt;&quot;&#xD;&#xA;builder.Append(messageBeforeTable)&#xD;&#xA;&#xD;&#xA;'-------------------------------------------------now to add the table [for status table]-----------------------------------------------------&#xD;&#xA;'now add table opening tag and define table style&#xD;&#xA;&#xD;&#xA;Dim tableOpeningTag As String = &quot;&lt;table border = 1 style='border-collapse:collapse'&gt;&quot;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Console.WriteLine(&quot;setting html mail table header....&quot;)&#xD;&#xA;'set html header here &#xD;&#xA;Dim tableHeader As String&#xD;&#xA;Dim s As List(Of String)&#xD;&#xA;Dim tdTag As String&#xD;&#xA;If dt IsNot Nothing AndAlso dt.Rows.Count &gt; 0 Then&#xD;&#xA;builder.Append(&quot;&lt;h2&gt;&lt;b&gt;Error Details :&lt;/b&gt;&lt;/h2&gt;&quot;)&#xD;&#xA;builder.Append(tableOpeningTag)&#xD;&#xA;tableHeader =  &quot;&lt;tr&gt;&quot;+ String.Join(Environment.NewLine,(From c In  dt.Columns.Cast(Of DataColumn) Select String.Format(&quot;&lt;th style=&quot;&quot;text-align: center&quot;&quot;&gt;{0}&lt;/div&gt;&lt;/th&gt;&quot;, c.ColumnName.ToString)).ToList)+&quot;&lt;tr&gt;&quot;&#xD;&#xA;builder.Append(tableHeader)&#xD;&#xA;&#xD;&#xA;'generate the body of the table &#xD;&#xA;Console.WriteLine(&quot;now generating body of html table....&quot;)&#xD;&#xA;'this is the tag used in designing the rows of the table&#xD;&#xA;tdTag = &quot;&lt;td style=&quot;&quot;text-align: center&quot;&quot;&gt;{0}&lt;/div&gt;&lt;/td&gt;&quot;&#xD;&#xA;s = (From r In dt.AsEnumerable&#xD;&#xA;Select ro = r.ItemArray.toList&#xD;&#xA;Select u = &quot;&lt;tr&gt;&quot;+String.Join(Environment.NewLine,ro.ConvertAll(Function (e) String.Format(tdTag,e.ToString)).toArray())+&quot;&lt;/tr&gt;&quot;&#xD;&#xA;Select u).ToList()&#xD;&#xA;builder.Append( String.Join(Environment.NewLine,s))&#xD;&#xA;&#xD;&#xA;'now add table closing tag&#xD;&#xA;builder.Append(&quot;&lt;/table&gt;&quot;)&#xD;&#xA;End If&#xD;&#xA;&#xD;&#xA;Console.WriteLine(&quot;adding a closing message....&quot;)&#xD;&#xA;&#xD;&#xA;'add closing message if needed&#xD;&#xA;Dim messageAfterTable As String = &quot;&lt;p&gt;Thank you &lt;/p&gt;&#xD;&#xA;&lt;p&gt;Regards&lt;/p&gt;&#xD;&#xA;&lt;p&gt;HelpAtHome Bot&lt;/p&gt;&quot;&#xD;&#xA;builder.Append(messageAfterTable)&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;'close the entire html document Required!&#xD;&#xA;builder.Append(&quot;&lt;/body&gt;&lt;/html&gt;&quot;)&#xD;&#xA;'transfer builder to mail body argument&#xD;&#xA;mailBody = builder.ToString&#xD;&#xA;&#xD;&#xA;End If&#xD;&#xA;Catch ex As Exception&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;errorMessage = ex.Message&#xD;&#xA;&#x9;&#xD;&#xA;End Try" DisplayName="Generate Html Table" sap:VirtualizedContainerService.HintSize="388,222" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+      <ui:InvokeCode.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="mailBody">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="mailBody" />
+        </OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="dt">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtErrorDetail" />
+        </InArgument>
+        <InOutArgument x:TypeArguments="x:String" x:Key="errorMessage">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="errorMessage" />
+        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="generalErrorMessage">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="generalErrorMessage" />
+        </InArgument>
+      </ui:InvokeCode.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeCode>
+    <If sap2010:Annotation.AnnotationText="If no error message then send mail" Condition="[String.IsNullOrEmpty(errorMessage)]" sap:VirtualizedContainerService.HintSize="388,558" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <hm:SendEmailWithSendGrid sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="SendEmailWithSendGrid_1" isHtml="True" mailBody="[mailBody]" mailRecipientsCc="[in_Config(&quot;error_EmailCc&quot;).ToString]" mailRecipientsTo="[in_Config(&quot;error_Email&quot;).ToString]" mailSubject="[in_Config(&quot;ProcessName&quot;).ToString+&quot; Error Notification &quot;+Now.ToString(&quot;dd MMM yyyy hh:mm:ss&quot;)]">
+          <hm:SendEmailWithSendGrid.mailAttachments>
+            <InArgument x:TypeArguments="s:String[]" />
+          </hm:SendEmailWithSendGrid.mailAttachments>
+        </hm:SendEmailWithSendGrid>
+      </If.Then>
+      <If.Else>
+        <Throw Exception="[New SystemException(&quot;encountered download error but send cutsom mail failed with  :  &quot;+errorMessage)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+      </If.Else>
+    </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;done&quot;]" />
+  </Sequence>
+</Activity>
