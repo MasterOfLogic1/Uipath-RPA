@@ -1,0 +1,8 @@
+I would Not proceed with this process because of Input file related issues.
+
+A valid input file should be placed in the DataflexCashPosting Stroage Bucket.This file must be an excel containing the following headers {"supplementnumber","period","clientnumber","contractcode","checknumber","totaladjustmentamount","co-pay"}.
+
+The file name should look like (CheckNumber_PayDate.xlsx) where Pay date must be in date format MMddyyyy and file extension must be (.xlsx or.xls). i.e 103923227
+_02292024.xlsx would be a file containing transactions for check number  103923227 to be posted on 29th February 2024.
+
+Don't worry the headers are not case sensitve and spaces in the header names do not affect the bot

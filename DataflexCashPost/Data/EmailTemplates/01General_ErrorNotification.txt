@@ -1,0 +1,4 @@
+ProcessName Error Notification on MachineName Machine ReportDate :
+
+The ProcessName Process stopped with the error :
+errorMessage.
