@@ -1,0 +1,22 @@
+A_Columbus
+A_Jasper
+H_Terre Haute
+A_Bedford
+H_Anderson
+H_Bloomington
+H_Evansville
+H_Greenwood
+H_Indianapolis East
+H_Indy Avon
+H_Lafayette
+H_Muncie
+H_New Albany
+H_Richmond
+H_Seymour
+H_Winchester
+H_Crown Point
+H_Logansport
+H_Valparaiso
+H_Washington
+H_Fort Wayne
+A_Indy North

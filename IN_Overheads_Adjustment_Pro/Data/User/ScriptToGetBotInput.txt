@@ -1,0 +1,11 @@
+SELECT payer,
+       office,
+       ClientName,
+       invoiceid,
+       presskeys
+
+  FROM [RPA].[dbo].[MatrixCareInvoicesCheck] WHERE payer LIKE ('%Waiver%') AND payer <>'DNU Waiver A&D Indiana'
+
+ 
+
+GROUP BY payer

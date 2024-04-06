@@ -1,0 +1,1 @@
+(invoiceid VARCHAR(MAX), payer VARCHAR(MAX), office VARCHAR(MAX), clientname VARCHAR(MAX))

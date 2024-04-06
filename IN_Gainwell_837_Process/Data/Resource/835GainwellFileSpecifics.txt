@@ -1,0 +1,4 @@
+serviceName|RemotePath
+Adaptive Waiver|Distribution/HIPAA Transactions
+Adaptive PA|Distribution/HIPAA Transactions
+HAH|Distribution/HIPAA Transactions
