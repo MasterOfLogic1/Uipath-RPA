@@ -1,0 +1,279 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_Browser" Type="InOutArgument(ui:UiElement)" />
+    <x:Property Name="pageTimeOutInSeconds" Type="InArgument(x:Double)" />
+    <x:Property Name="activityTimeOutInSecs" Type="InArgument(x:Double)" />
+    <x:Property Name="in_AdmissionId" Type="InArgument(x:String)" />
+    <x:Property Name="in_MaxHoursPerPeriod" Type="InArgument(x:String)" />
+    <x:Property Name="in_ServiceCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_Contract" Type="InArgument(x:String)" />
+    <x:Property Name="in_ServiceDate" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Sequence.activityTimeOutInSecs>
+    <InArgument x:TypeArguments="x:Double" />
+  </this:Sequence.activityTimeOutInSecs>
+  <this:Sequence.in_AdmissionId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Sequence.in_AdmissionId>
+  <this:Sequence.in_MaxHoursPerPeriod>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Sequence.in_MaxHoursPerPeriod>
+  <this:Sequence.in_ServiceCode>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Sequence.in_ServiceCode>
+  <this:Sequence.in_Contract>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Sequence.in_Contract>
+  <this:Sequence.in_ServiceDate>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Sequence.in_ServiceDate>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1061.6,2844</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="608,2779.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="545.6,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Updating Auth details&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: HHAeXchange - Internal Patient Information" sap:VirtualizedContainerService.HintSize="545.6,2484.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e1558925-2349-4873-99fd-b3ef4cea1e13" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,2268" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap:VirtualizedContainerService.HintSize="449.6,2152.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NSelectItem DisplayName="Select Item 'Contract'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_1" Item="[in_Contract]" ScopeIdentifier="e1558925-2349-4873-99fd-b3ef4cea1e13" Timeout="[activityTimeOutInSecs]" Version="V3">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="2">
+                    <x:String>--Select--</x:String>
+                    <x:String>KEYSTONE FIRST CHC (PHL)</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="https://app2.hhaexchange.com/ENT2401010000/Patient/AddPatientAuthorizationNew_ns.aspx?PatientId=18204290&amp;Office=14664" DesignTimeRectangle="117, 359, 372, 39" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'--Select--'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxDdlSource' tag='SELECT' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxDdlSource' tag='SELECT' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' type='' class='' aaname='                             Contract                             *                                                            &amp;#x9;--Select-- &amp;#x9;KEYSTONE FIRST CHC (PHL)                                                        ' /&gt;" Guid="3bbc5843-4816-4f19-aafc-e9d1d734d64f" ImageBase64="" InformativeScreenshot="9dc3448af971ba19602baf79e9cd388c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="117, 333, 71, 22" ElementType="Text" FriendlyName="'Contract'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl aaname='Contract' parentid='frmAddPatientAuthorization' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl aaname='Contract' parentid='frmAddPatientAuthorization' tag='SPAN' type='' class='' check:innerText='Contract' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAaCAYAAAD/nKG4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPySURBVFhH7ZfLK29RFMfv2B9gopSRMpCBZEIkRRTKI0bKgBgRAwmJYiRRMjAjE8RAeUUpopTkUR555BGJvB+zdfusWqfze9zb79yu7uCewbefs/da66z12Wvvs/34+voSX5HJh+VBPiwP8mF5kA/Lg3xYHuTD8iAflgeFhfXw8CCDg4OSnZ0tUVFREhMTIxUVFTIxMSHPz88h9v+LQmBdXl5KcXGxQgpWVVWVggz2+VtaW1uTuLg4WVlZCTv/3aIR6uvrpba2Vh4fH0PmA2Bh3NTUpGDS0tJkdXVVPj4+FNDMzIwsLS0FOP9NfX5+SldXl777X8Ha29uTlJSUyGBtb29LUlKSREdHy+zsbIBhsN7e3mR8fFxycnK0wPj4eGlsbJSTkxPH5ubmRvLz8yU3N1d2d3eltbVV7djWdXV1cn19rXYk1tvbq+PWxciSBh7P3d3dcnFxITU1NZrj8vKy+lMki5yYmPjLXCyfnp4ex47f5uZmHd/c3JSioiLn3Sb3wgXAmpqaUgPOqvPzc2c8WHRBX19fSGBER+7v76udwaKwhISEEFsKpJsPDg6krKzMgZWeni55eXnS1tYmT09PDixiFRQUOP5WCNDYvqmpqepnMDhnb29v1YZfns3XVFlZKff399Lf36/+jAGbBSbWxsaGU3cArJGRETUuLy+Xu7s7ZzxYh4eHCgUI+LBVeWF1dbX6t7e3y/v7uwOLMc7Bs7MzBW3vcS+K2zZ4GxosRAELCwvalS8vLzoP8KurK43N8+npqWRlZSlAK5ZdgD/bbGtrS8fo2qOjI/0bWV4RbcNIYbGS2AV3oPkXFhbqSroBDA0NOXYUQCEkzhZiLBJY+PARcM8hCqYL6Ujs3MIXiB0dHfrc0tKiCxkcA3mCNTY2psa0oJ0n4WRBKY4ibdyKsnE3AHzMzg5Sr7Dc9iZAZWZm6nxJSYleb6anp7XzLRaFA4Dnzs7OAH+3PMGyFWd70eruObf+pLO+C5YtsDsXfnm2WN/SWVwRuEvhwNmwvr6u5xFnA+eUFXF8fCwZGRmeziwvsDhfGOOLS+xIYNluAAzXHHJj3HI2EMSwM4u6qJHc3TalpaW62MR6fX113hUAC+3s7DgtHCxrYYKMjo46CbmFLzGw8wKLxPncu2PhS4zfwbLrDvN8zTjYY2NjVYwZLLqNBrDYJnsHNraz3PPuvENgIQJzQbRPsP27Mzc359iw4vPz8yH3LPfXxQssxJWD97AIvLOhoUFX/XewWLjJyUlJTk5WG/JZXFyU4eFhfTZYiHsXOZIrc9Q3MDDg/AtHJ/MhsrpZeGKZf1hYvsLLh+VBPiwP8mF5kA/Lg3xYEetLfgLYwadmes7l+AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NSelectItem DisplayName="Select 'Discipline' As PCA" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_2" Item="PCA" ScopeIdentifier="e1558925-2349-4873-99fd-b3ef4cea1e13" Timeout="[activityTimeOutInSecs]" Version="V3">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="3">
+                    <x:String>--Select--</x:String>
+                    <x:String>PCA</x:String>
+                    <x:String>Other (Non Skilled)</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="https://app2.hhaexchange.com/ENT2401010000/Patient/AddPatientAuthorizationNew_ns.aspx?PatientId=18204290&amp;Office=14664" DesignTimeRectangle="520, 359, 372, 39" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'--Select--'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxDdlDiscipline' tag='SELECT' name='uxDdlDiscipline' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxDdlDiscipline' tag='SELECT' name='uxDdlDiscipline' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' type='' class='' aaname='' /&gt;" Guid="b58bf144-5a63-4c30-81b0-80515fe109d8" ImageBase64="" InformativeScreenshot="5f23beb03474828d9b633e9b3e5486e8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NSelectItem DisplayName="Select Service Code" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="[in_ServiceCode]" ScopeIdentifier="e1558925-2349-4873-99fd-b3ef4cea1e13" Timeout="[activityTimeOutInSecs]" Version="V3">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="11">
+                    <x:String>--Select--</x:String>
+                    <x:String>Ineligible Client - Non-Billable</x:String>
+                    <x:String>Ineligible Client - Review Needed</x:String>
+                    <x:String>Meet &amp; Greet - Non-Billable</x:String>
+                    <x:String>No Authorization - Non-Billable</x:String>
+                    <x:String>Over Authorization - Non-Billable</x:String>
+                    <x:String>Pending Authorization Edit - Review Needed</x:String>
+                    <x:String>Pending Authorization Receipt - Review Needed</x:String>
+                    <x:String>Temp Contract- Auth Pending</x:String>
+                    <x:String>Temp Contract- No Auth Pending</x:String>
+                    <x:String>W1793</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="https://app2.hhaexchange.com/ENT2401010000/Patient/AddPatientAuthorizationNew_ns.aspx?PatientId=18204290&amp;Office=14664" DesignTimeRectangle="1325, 359, 372, 39" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'--Select--'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxDdlServiceCode' tag='SELECT' name='uxDdlServiceCode' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxDdlServiceCode' tag='SELECT' name='uxDdlServiceCode' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' type='' class='' aaname='' /&gt;" Guid="3feb5e9e-07d3-43a2-a497-cfc69c52fe68" ImageBase64="" InformativeScreenshot="790465a7cdb1d4cb0c593023b65ae91e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT uxFromDate'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="e1558925-2349-4873-99fd-b3ef4cea1e13" Text="[in_ServiceDate]" Timeout="[activityTimeOutInSecs]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://app2.hhaexchange.com/ENT2401010000/Patient/AddPatientAuthorizationNew_ns.aspx?PatientId=18204290&amp;Office=14664" DesignTimeRectangle="117, 520, 372, 39" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT uxFromDate'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxFromDate' tag='INPUT' name='uxFromDate' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxFromDate' tag='INPUT' name='uxFromDate' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' type='date' class='' aaname='' /&gt;" Guid="36d3c801-7573-40ba-83b5-9a09586ae521" ImageBase64="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" InformativeScreenshot="fec20f0f9a329f1c0e8f8ac59dbe4e56.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT uxToDate'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="e1558925-2349-4873-99fd-b3ef4cea1e13" Text="[in_ServiceDate]" Timeout="[activityTimeOutInSecs]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://app2.hhaexchange.com/ENT2401010000/Patient/AddPatientAuthorizationNew_ns.aspx?PatientId=18204290&amp;Office=14664" DesignTimeRectangle="520, 520, 372, 39" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT uxToDate'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxToDate' tag='INPUT' name='uxToDate' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxToDate' tag='INPUT' name='uxToDate' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' type='date' class='' aaname='' /&gt;" Guid="c334ff41-3c96-4f18-9cf7-8147a7737468" ImageBase64="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" InformativeScreenshot="db75c003671327187a2b5bbfc991fb21.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NSelectItem DisplayName="Select Item 'Auth Period' As Entire Period" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="Entire Period" ScopeIdentifier="e1558925-2349-4873-99fd-b3ef4cea1e13" Timeout="[activityTimeOutInSecs]" Version="V3">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="4">
+                    <x:String>Daily</x:String>
+                    <x:String>Weekly</x:String>
+                    <x:String>Monthly</x:String>
+                    <x:String>Entire Period</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="https://app2.hhaexchange.com/ENT2401010000/Patient/AddPatientAuthorizationNew_ns.aspx?PatientId=18204290&amp;Office=14664" DesignTimeRectangle="1325, 520, 372, 39" DesignTimeScaleFactor="1.25" ElementType="DropDown" FriendlyName="'Daily'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxDdlPeriod' tag='SELECT' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxDdlPeriod' tag='SELECT' parentid='frmAddPatientAuthorization' parentname='frmAddPatientAuthorization' type='' class='' aaname='' /&gt;" Guid="1334f72f-a67c-4ef1-a2db-fa4851eb1b8c" ImageBase64="" InformativeScreenshot="33a94dcc1c5aea0c143240de4512bb14.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1325, 494, 96, 22" ElementType="Text" FriendlyName="'Auth Period'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='lblMaxPeriod' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='lblMaxPeriod' tag='SPAN' type='' class='' aaname='Auth Period' check:innerText='Auth Period' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAAAaCAYAAABByvnlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARsSURBVGhD7VhLK61RGD5jP8DEyEBKkYFkQkqKEAOXGIgkl5i4jNwShQEZGimRiTIxcEnKgGRCbrkk5B5yyWXP3tPz1vu1ztrr22dv9tlnDb7B0/6837PetdbzrPWu9fnl8/nIgz3wDLEMniGWwTPEMniGWAbPEMvgGWIZ/qshq6urFBUVRampqbS3t2fk2IDn52dqbW2lmJgYmpubM3JCRV9fH88dv2rcaMja2hrFxsZyg4KCArq5ufHjhAM/MeT29pby8/O5vSA+Pp4aGhro+PjY2Oa7uLu7o6KiIu5jenrayAkVQRvy9fVFw8PDziSjo6NZOJ0XCsRgPU+4DRGkp6fTzs6Osd13cXV1RVtbW/T+/m58HyqCNgSrobS0lBITE6mzs5Mb9ff3s1E6NxigHdojz78yRPIeHBw4sYGBAb82NiFoQ2Q1l5eX8zPEys3NpYuLC4ejijE5OenEdYFRe0dGRrj2Ii5obGzkd8LPzMyk+fl5qqio4B2ZkpJC4+PjAVejyRBAJip9IIY8MzMzlJOTw+9Q2rq6uuj6+tpph3ngHUrS7u4uL0qMA89u8zXlbWtro9PTU4cDoD0WN3QAZ3R01FmkAQ1RyxWEfHx8pKqqKhZpaWnJ4QVryOHhIZWVlTmGZGRkUF5eHnV3d9PLy4vDx/u4uDh+FqDP2dlZJ7cOkyEYf29vL8eam5u5D8QgAGIQo7a21hEQCwAVAW3FEIw3KyuLn2UepvmqeXWgZO7v7zPv9fWV2tvb/ThyRgc0RMqVem6MjY1xw56eHvr4+OBYsIboXMmp8wEMDIN/eHig6upqjnV0dDh96tDzQqD19XUWAzEsKPCOjo44hhK8ubnJMbWPhYUFjokhQGVlJVcH6IFdYJqv5IVWiH1+fvICrqurY57oBR2gh8o7Ozuj4uJi5gU0RMpVdnY2nZ+fc2xjY4NjatkKtyHIj34kDjERV8uODjWvDkz28vKSeSsrKxxLTk7m3TM0NMQoLCzk+MTEBPPEEIgMsd36kvlKXlUrQPLgVgZD3XgyR1dD1HJlglq2wm2IygdkUqEakpSURIODg8azwQ0iiPCQE7mlPWCarxtf5iRxN57EXQ3Btwa+OUByg2xD0wABbH/EIm2InleFrFDscNUoHW7CAab5/nSHyFHgaggmhV2giwOI0FK25LBHDLcH1FnEmpqaOOZmCG4kiIGPWhoJQ9RaPzU1xZUAcfxCIIwbf4dqyMnJCd8O/3aGbG9vc7lU+0c5DXiGgCTXsJqaGnp6evqDJJ3jPcwB33TDwE0JNyZV4Le3N74KqjyZdCQMwVghBAQBV256KG9qv6EaoudVgQUgH6amWxbaJCQk8LPRELVcYSupBACiQBy8l5sPTMMhiaskTKivr+c7O1aILjCugPKNAW5LSwuvpkgYAmD1Li8vU0lJiSNgWloaH+739/fMCdUQAHkXFxf9vkP0f92gvXyHYCFAY4wZlxnXkuXBDniGWAbPEMvgGWIZPEMsg2eIVfDRb3o4KhEbIa88AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NSelectItem.Target>
+              </uix:NSelectItem>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Max Hours per Period'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="e1558925-2349-4873-99fd-b3ef4cea1e13" Text="[in_MaxHoursPerPeriod]" Timeout="[activityTimeOutInSecs]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://app2.hhaexchange.com/ENT2401010000/Patient/AddPatientAuthorizationNew_ns.aspx?PatientId=18204290&amp;Office=14664" DesignTimeRectangle="117, 766, 372, 39" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'INPUT uxTxtMaximum'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxTxtMaximum' tag='INPUT' name='uxTxtMaximum' parentid='trMaximum' parentname='frmAddPatientAuthorization' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='uxTxtMaximum' tag='INPUT' name='uxTxtMaximum' parentid='trMaximum' parentname='frmAddPatientAuthorization' type='number' class='' aaname='' /&gt;" Guid="0bb37b68-e344-48a3-b349-f2c0bf87199b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXgAAAArCAYAAABy8JNLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGmSURBVHhe7dhLi+JQEIDR+f+/SjBbE8hOQVfJokURjY/E121uoJuBcfZanMXZVW0/ivrT930CIB6BBwhK4AGC+g18WZZpMpkA8EGKokiz2SzVdZ2apnkd+Dy4Xq/TZrMZbbdbAN7YT6+/vr7SfD5PVVWltm1fB36326X9fp+6rgPgAxwOh7HbOfiLxWK85F8GPg9fLpc0DEO6Xq8AvLHc6ux8Po+hz5HP75qXgT+dTuPS/X5Pj8cDgDeXe3273cbjPEd+Op3+P/B5MC89n08APkBudj7Oj8fj2HKBBwgiNzu3Ozdc4AECEXiAoAQeICiBBwhK4AGCEniAoAQeICiBBwhK4AGCEniAoAQeICiBBwhK4AGCEniAoAQeICiBBwhK4AGCEniAoAQeICiBBwhK4AGCEniAoAQeICiBBwhK4AGCEniAoAQeICiBBwhK4AGC+jvwRVEIPEAUP4Hvui7NZjOBB4gg9/p+v6dhGNJyuUx1Xb8O/PF4HIdy5PMCAO8t9zo3fLVapaqqUtM0/wa+LMsx8gB8jul0Or5l8uXetu1v3Pu+T98OnKW9pfJBgAAAAABJRU5ErkJggg==" InformativeScreenshot="c2bbb60f6b8f0d9f5bb0125066c1b6a3.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="117, 740, 176, 22" ElementType="Text" FriendlyName="'Max Hours per Period'" FullSelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='lblMaxUnits' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='mypopup' tag='IFRAME' /&gt;&lt;webctrl id='lblMaxUnits' tag='SPAN' type='' class='' aaname='Max Hours per Period' check:innerText='Max Hours per Period' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1558925-2349-4873-99fd-b3ef4cea1e13" Timeout="[activityTimeOutInSecs]" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://app2.hhaexchange.com/ENT2401010000/Patient/InternalPatientInfo_ns.aspx?PatientId=18204290&amp;FromSearch=1" DesignTimeRectangle="1661, 971, 81, 46" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;webctrl id='dynamicSaveBtn' tag='BUTTON' aaname='Save' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='dynamicSaveBtn' tag='BUTTON' aaname='Save' type='button' class='button primary' check:text='Save' /&gt;" Guid="27994d98-5d0b-45a1-89bd-6b6b20ceecbf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAyCAYAAAAtBJe4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAO5SURBVHhe7ZvfSxRRFMf7l3qN6LnHwLcIH4J8iEKIiiIpocBKEbQiSiv6BWJh1INaGpZS/srUyp+72aqsP1h13XXV/X3a713OONuOZblnYek8fJC9c+69M58599wZZPYkk0lScotKFUClCpAh1eUJ0pmqQdp3+A3tLWpR/gA8wRe82T1aUnHgQHG7Y2fl98CbXawlFcadOig7A/6ypOqS3x3wlyXVKVD5O1SqACpVAJUqgEoVQKUKoFIFUKkCqFQBVKoAKlUAlSqAShUgr1JrHk/Q4tImxeMJM9fGZozGpwJ07d6oY3yhkjeptxsmKRyJWxMy8USCGlunHfsUKnxt4lIHx1bM+MFQlCofjNHBkg6ToW975qmkvM+xT6GSN6numfS/GWbmQlRU2uUYg/bXH+bIH4xQIpE+H2T38PgKHbvYa2Le9y+a9rX1KF26+cXqe7/JTdFYIiPzL9QM06QnQLFUO4/VPeSj4vPdVj8JMBcQl9rRu2DGh6yJHwEqqx3Oijl0stNIQAzq7XoKlvvN5af9R9roxtMJIwftL9pnrL4DI8smbskfptKKATpXPWRuDtoQv7C0Ycnlsexz5xLMAcSlnrjyibyL69aE2KxG3at0/HJ/RtzZqkE6df2z9bvt47yJhyAcg/jpVLajzTUdNHIwtm8lbNogF/04o5dXw3S6Mj3eo5dTJptxs67Wj1hz5BrMC8SlAiw7LL9IdGvD8gciVH7rqzmOOvuqY9YI4qxisNw5u5s7vSZTuQTw0se4dxpdRvTU7JrVDysDoI3j6p65Ms4tl/A550Uqg+xEneSl3TPsM+3v+hZMG0Dtbe3ymjjE2KVCJH5z/eSlj5WAG4eND8udr8mJprat0pFreI68SgX2ZYxN7GhZD8370iLQjuOIg1i02aUiE0e/r1p9WSBi+ThnKv5K1k8nMC8QlYrMwQaE+sj1rfrhGAXW0hsJHrfsUlkEso7F26WChmaPyVS0YzmHNmJUcXerTnJNxSZV99xtteMJo/bJhHXTJMC8QFzqdstxMxwzF4k4XsZY/tj9IQTiuH7apdo3J8Cblv043yT0x+bETxM4F8lnYz4nUanIipbU0sSmxK+o2Ig83lDGKypEIEtx4QCvtPWpLIO8X6UC1GKMtd1bGddu3BzE8c1B7S74TP3fUKkCqFQBVKoAKlUAlSqAShVApQqgUgVQqQKoVAFUqgAqVYAsqfrJz+5w/ORHP07bHY4fp+lnlP/Otp9RslgY11KwM+AJvuxCQYZUJRck6SdRKyMgiWCiIgAAAABJRU5ErkJggg==" InformativeScreenshot="5b196e3d6ea68a7cbd1dd3740d5788df.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;clicked save&quot;]" />
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAuUSURBVFhHtZgJdJTVFcdHliwkgQQoCIEQAoRklswkwxayhyABElCgaG3lCFrqgh494mmrAbR42p4qO5EQEgibLbgUi1JlyUJYBA5UEesaBLKBkI0kJJmZd0//9703k2HRA1rfOf/zv/d+b777m/t9mZl8hh+7Do6NDrqYFjfvYpp9HXT4Upr90sVUuwsx61Jtmv3kxdS4DdVpcbOOjY0O1S/7+ZYl0L/bQwP7RlSnxs4FzB40bwMQwYVyO9V65RzXIobY22tTYvfWptgemTOgj8ka6O+rT/v/Wff1CzFVptievpQ2qhwA7QDgxpAGSpEQVJuCWkqshKpRNVGTGivjGtSVx52pSbEuvhfn1Kf/8SspONBveWTYA18lWkt4YtyYgSSMBFIwcAbQEKgpoOuVbBPVybFUnWyT8RfjLQdfiwybwz10uztbpgD/kI/jY5aiWRXkUo1jJZSeCIuB0NAj4Qbx1JI8YHAbVSdJCciFvObEGGOOMcC/p257e6tHly4+ACmUAF4NZRN18s6GqqmqwavgWqhZkVtFdSI80Upuh9hlXAmHCrmnbv/DyxToH4J3XeiZAjdScN4gEgDN4dwQsQRQriUh0FzFCfAE5AkxBME74wvs4y2FfNU0xq1XUkig36mx5j9pEM9UtGuhEU9GA0ASoBMEzRFzY1lXEB4xzE0aLyVOjo7+U1LPHt9/Ty6LHDwHk6mVl4LBNIBu7nE5CQWlYFhohKmw83S0Q+MtckKsSgUCoTbewk4X4rXL2Fz1asTABzTO9Wta32Dzf+PNZTdMpxPAA+HRTdNheU1EyyLOKymI8WZxPh6AAOMaYi0zy/Xp6Oiy7D69zBpLLf+IYN+ZKycvKr5vjLigQPhdSwAevWrKJ9c5O/ZVpY8Rtb/7DTX/ezd1fFtBwukkEi6ithpyXXyHnJ/NJ+exBHJ+ZCfn0Vjh/AhiPxqLPI5rqi7dpnNbm+uE7Wl7tH83jWcw9EkPN43eMv3MK8+l0ZepVg3Cl8Ht6t2733FVZpK4/PwCav/mK+LlcAqqb3FRdb1SQ6uLOhxCHhMNx8j5+TPkOpECQBtgrBDDSKn8iBWxlRyyZhWOo9by+TN6R2g8g8G2Zfqjtm33ivT1WbRn5mgJgksgL4v7EuD+4EtDldnponHrRuFsbCAnhvXJeQe9caSNXnqnhRZsbqYFW5pp6bstVFh6jU5+65B7yNFIrupNwnkyA0AxxECOI3DAuI7GADBG5qpm4bzddSxmrsYzGGK3Td9r2zZdQLRgSYa+HwA4jqHMdE5JVE5KoMathcLVfJUaMLG1e6/R7LVNlPBKA9kXX69xLzXQrDVNcg/vJedVclXhjR1PAqAFMgvHEbN0CHAyhkw6N+2RcNF/mxhq3TqtnQGtW6fTqKJptOnheHFunEnLrByQlxY+KSfX2Cro2e3NFP+ygoljLVJyA3KNnfc8u71FQgoHpv75UxrKBECTBpJOzsPsRkzZyIBtFdtDgwy2bdkzYzZnU8zmaVA2WbdMo8T12eJ0skV8O9bIorPQefxAaD1+FJdM0Jp9rZhQPcUuuj2Nwd7Ve1vla0XLV+T6aBRgooWWjqPIIWN2rfKoeQbr5uwCSxEDZgsFCsiiLPHnJxPpm3FGcXYMAKHaxx+WNz3fVzNWNZEtp14JAJ74VtLHZ61ppI9xv/JynX5QgmgxHDQSUB4JxyF4eWQeA56yFGURJBjUHWesyhS7p8eJs6OjWdS0603qwF9rfsk1GrVENbXegca9XE/bDrfJKbouvQuwkeQ8FMkSXgIcHHJwfCjysMGyOavFsglQkHnTVOVFU4W1cIpYuDBJnE4wigoAOmtrcB8JWvJOM8Xk1N0k6w2xGyzmxc5azlvNVN+Me7G1As1HAM6t4SwAehwahgkOu2TQYMK8cSp5SeYJuZli54w4UWEfKYTLRVV1Lnqs6CpZ0JTFjd2xzL3iW9Xmb2yiSpwDn+jcXAogEkYpQjjLI1QNjuMuA+Bcxo1ThKlwChkh6QWTZQyJ376YTKcwRf6W4JNzE/MLV6A6MqOpx93iXIr36H1a8zc1yTfJ3zaO8qGAGCrYIUIMhUt3lIejFs5OBtPGqd8ZCycLCVQwWYEyoJKIWZ8pin4Zh6+yb+TleeHNq2RCYxMaKr9R31e/Qovebpa3iWirIsdBwBwcAh8iIIYTnMtaOdfCOG8xGAumHIkGjNSGTMFu3MB5JktwbfJf0+l88XvkwA2+5dA1si+5QkaAGNH0dmVddIXyilvlH5qr5u8ACwNMmHSlwQCS8orDTjJgHiAUEANyrBW1YZKIQo21ZMOT8iPi1DkHZa9soGg0ZRn/qACi4d8nPp61ooFOnO2Q53B9MhsTGiRhnNIHkaNskIzZtYSjNLTAEJWf+YgCgfIniej8SYSaFsdczxT2wmn0Zd1Z+TGx4sNW/IFcoSg0V7rsgemsKXGN9y7/oFl9UDccwuUcAZBQFqBCAajjsoHwgYALVSodMANfdWODRq6/pw0iSHiUx/kkrql6/j3isQ8WU0NbE365CHpicxNZci7TyD/cIAB55wz3xBZ+jYuutTVSx6cPSwhn2QDhLLsbU7obMCrmmqMMeSni0rvbK7b3Vf/wR66/5/1IAClNFJ2xd22iGLNpJuX/Zwc1tePzDA2Xf9BCk5fV4w/gMkUCxlu2RZdxWetpGfbw3ha85mJFHrUdMiqo0v5wKQDC3eIccpb23yvheEWsTZ8LgPYRgBixDjDrJiowOHLyridu+RXln9pBDdeacMmIjld0UO7+Fnrhras0r6CB5kK/33mVig624n7tkHt4754zW+l0yTjRLgH6sQAjXesXbmF6/chV3P9RjWcwBCUMjADEQYYY8TpDZcAz2Gm4rGWI4RDDso8unEHz9+SIw5Un5U3fjh+nPKXKOiddgOrwccQ/Ynl9caWCHsfel99OE43FPCGG6AuIvu6YHCUQx3BnCY6V9P10frZf55MHn8FB3YauSntq+LqMNgDQ8FwJBJgJXrGClnku4F+fKCz4gfvgrudox2fv09d15zEtp9TXdefon1/so9lvP0WW/CxKzE8RlXtxf5X0YQGkDwA9scw7497UXhy8KG5k1+uf3wTY+5vCX0suHbZ2gmtY7gQBB4zSsNx04lxLHvNySB5Hzp4ucMtwLI+PyE0Ta3fiu7wkBJPpDZAQQITIXMbF8GKuBcu47r1eZfend7/1c5u+v456ACevjliTTizdUErXhHTdnF0pzX0ctTS1R++dVjBOXN7XB0DBLEBBxTJmKI5l7ijuxard8Lz/Qxrn5uUXFewX9sr4pUPXcBMpNNLNV8NXp4mhcHVcQ3jX2JG795tzk0Xxv/CBW9yLBSB4SU/EUuSUHgQwKXF+Z1DOhLiuP/wwySc0MCRidfpGbiQbX6dUd035Ku9jnfvD5b5U8czmGHF1vxsoyC1yHGAPFMoZLpAc+4M2Wod1uc2HSD5dfNCgcOiqVDRMFeFwbqobKwDAybo+Juu8X9VE4uvx4vju/tRxgEEAwC6hZKzyAwGoBSAOKAz0M9zewyP36j4woOegl+JzhqxIqRmyMkVokVd8vVbIY/L48FVJ4tXtI6hlP0P0AEAP7f7kPOAvHPv9MTE/p/OAX9W5HX5LY4bd1Vu3vbPlGxns2+f+yDlhf0k4CAARBoCwlckKZgV7sgiTQn15MmopFL4ymbLy4sSJ3fhskzB+DMNQMgYU3Lf98i7f0vyF3e7PsN/10x8HB8T1Mw1ZnrIYIGcAIhjG7YOXJYnBDMnx8iSKXJlIef8YQi37GMgXcNA+6ch92qFy54GAp2endbn++ctPXT6DA30D4weYAPIotHfwsuR2D6BbAJyYa6crH/Il9BGOfT7au7fB38flnTs/q1uEPbJr53OXn2uF5owNxSWdBagCwJ0CbCucdr2FXygHun/n2N/9iHO/T56juOu8s28EBemX3eEyGP4HrLauaaXfYekAAAAASUVORK5CYII=" InformativeScreenshot="f16728226fb9986edeb5d14dcbcec4d0.jpg" Selector="&lt;html app='chrome.exe' title='HHAeXchange - Internal Patient Information' /&gt;" Url="https://app2.hhaexchange.com/ENT2401010000/Patient/InternalPatientInfo_ns.aspx?PatientId=18204290&amp;FromSearch=1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
