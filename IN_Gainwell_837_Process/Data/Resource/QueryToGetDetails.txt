@@ -1,0 +1,15 @@
+SELECT 
+      DBNAME,
+      INVOICENO,
+      PERIOD,
+      CLIENTNUMBER,
+       SUPPLEMENTNO,
+       CHECKNUMBER,
+      CONTRACTCODE,
+       PAIDAMOUNT,
+      BILLEDAMOUNT 
+      
+      FROM 
+      
+     "DISC_PROD"."DATAFLEXSYNCDATA"."DFINVOICEPAYMENTS" 
+     where InvoiceNo IN ('TheInvoiceNumber')

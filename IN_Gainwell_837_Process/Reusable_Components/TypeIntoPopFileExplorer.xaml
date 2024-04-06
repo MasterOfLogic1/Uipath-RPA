@@ -1,0 +1,258 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ImportFileUsingPopFileExplorer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="fileToExtract" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:ImportFileUsingPopFileExplorer.fileToExtract>
+    <InArgument x:TypeArguments="x:String" />
+  </this:ImportFileUsingPopFileExplorer.fileToExtract>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>766.4,1276</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ImportFileUsingPopFileExplorer_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ImportFileUsingPopFileExplorer" sap:VirtualizedContainerService.HintSize="545.6,1211.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ui:UiElement" Name="matrixApp" />
+      <Variable x:TypeArguments="x:Boolean" Name="saveButtonExists" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application: Save 5010 837I EDI invoice file" sap:VirtualizedContainerService.HintSize="483.2,1099.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="5b802a78-b6da-496b-a705-471e4ffd4b8e" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,808" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;done&quot;]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Edit'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="WindowMessages" ScopeIdentifier="5b802a78-b6da-496b-a705-471e4ffd4b8e" Text="[fileToExtract]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="170, 645, 1011, 21" DesignTimeScaleFactor="1.25" ElementType="InputBox" FriendlyName="'Edit'" FullSelectorArgument="&lt;wnd aaname='File*name*' cls='ComboBox' /&gt;&lt;wnd ctrlid='*' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='File*name*' cls='ComboBox' /&gt;&lt;wnd ctrlid='*' /&gt;" Guid="4bca4c85-168c-4680-b7e1-bd275fd8a8ef" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAA/cAAAAZCAYAAAB0IN6gAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADxSURBVHhe7dexDYQwFAXBK4A2KIl+ySiAwAEhEj0ggn+JQxfgJ82E28H+CgAAAIhm7gEAACDccO7P86xt2+q+714AAACAWQ3nft/3WpalWmu9AAAAALMy9wAAABDO3AMAAEA4cw8AAADhzD0AAACEM/cAAAAQztwDAABAOHMPAAAA4cw9AAAAhDP3AAAAEM7cAwAAQDhzDwAAAOHMPQAAAIQz9wAAABDO3AMAAEA4cw8AAADhzD0AAACEG879cRy1rmtd19ULAAAAMKvh3L/vW8/z1Pd9vQAAAACzGs49AAAAkMPcAwAAQDhzDwAAANGq/p79usyHvC2OAAAAAElFTkSuQmCC" InformativeScreenshot="fddb0c9b9279c6531ad110491f0b09e5.png" ScopeSelectorArgument="&lt;wnd app='soneto.exe' cls='*' title='*Save*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Save" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5b802a78-b6da-496b-a705-471e4ffd4b8e" Timeout="5" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="1556, 1023, 110, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='*' title='*Save' aaname='Save' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='*' title='*Save' aaname='Save' cls='Button' /&gt;" Guid="d1d42432-b407-4b95-ab08-75757771b721" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAlCAYAAACeVr0yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASlSURBVHhe7drfT1NXAMDxvS17mNmPkLDHPZiZbckSM7cs2RTrECcbIkbXiQ4pFYfIL4tTkB8qguIPJugiTatgMQ7cqAVRRMABFfBihdYBLf1B6YvGBxP+g+/urV3isGx7Wey9uQ+fl5Nzzr3Jt+UebvrK/Pw8KvlTQyrE30I+ffqUQCCgkonHjx9HD/no0SNsNhsdHR10dnaqYpjVasXlcv1zSKfTic/nU8Wwnp6efw85OTlJKBRSxbDe3l41pBKoIRVCDakQakiFUEMqhLxD+t2E7BbqairYu3ev6AgVVa30+wLMRJuvYPINOetm5t4NOn7MYEPKOj7TaNCsSiFlw34aRryM+6OsUTD5hpy6w4hlP58uyaC6bYBhacw9xOTAz5xu9TP2cMF8hZNvSMd1Bhp0vPlxKT9dH8Uljc0FCAY8uL1zzAYXzFc4+Yb02hE6ykh650O2lFziypD4vFww5571JHX5iSQmRhgaMd4cYKz7AkZDOtU2D8JUZL5rkLG2Y6TsMdE6NIF7qo/uC5VkieuSwusNHDbexL7gGrFCxoedadzOTpr36dmdkcmuXbkcqTPSOhIiEPk2TvS1cPl0AQUFu0WpfLEyi+JjFmztjVzYo2FFWQ/XR2fCc6d/b+G3gwms2N0qfij6uGGupSYzk22ZBeTli3t8m8GeoybODr74gYkFMg4pmRU5aK/eSe43y1n7dSrfV7bRJQRwS4cd933G7thoamoUFaNdtgZdTj2X+m5z12Jg6doTNHffxxNyc/faOWq3J1DSPs3I+FXqs7SkfZSC/lQTpotNNJVr2WY4jN44vOAeYoPMQz7HZaPtaDpr3l3KxoYJ+h/M4Ok6S122hjfi4oiLe4slr33A+lwxpOMBE0MmcuPTqW3ppd/TzTXLGbLTGrjj9uMVGqnSruK9V1+PrI1YrWfrmdvRr/+SKSdk0IfrlhljQQJv65q5+ms9p3QFZKQeolEYZkSwcnxzGiUVUsggPpedWwcS2F7VzLHaMs5V5bChZoBJX5C5cMhsNiWWcl4QxLUCgmT8IS6PP/r1XzL5hnQJuLt/oXlsFqdPGptipP0EVanLeL/ISoe5lPwdeXy100j/7DRBx3kKVyWzq1AKGWJuZgKPLZ/t+n18t17HweJyTovPS19wTjxItVGv20TqJ1p+uDLOTEAci3YPMUS+IaeHcXaexJBtoDCviKKiHHbo0knekkX11THu913kuCGL5HUb0RuKKCzNY+NyDTuLn4UMBT2EHrZQti2Z1Su17ChrCv8vGgzvL9BnKqVkczKfJ+nJzy8U9xevccLM+RuOF+8lBsj4T6uLPwQLNevXkSa91ZFoc8LPMI9fOgQ56b14iPKt4nhSMhp9BUXZeZwxi4eh8MuCZwcla414UNpXSYnFHtk3YqqXblM5meK+X/61v76SAwvnxQjZhvR6vTgcjkX5/bH5LPu/yDakyWQiPj5+UdKPkaKtUyrZhpROkWazeVHSD8airVMqGT8jVc9TQyqEGlIh1JAKoYZUiP8UcnBwkNHRUVUM6+rqWjzkkydPsNvt4ZCq2Ce9JIkaUiVfakiFUEMqhBpSEeb5E1ROs42t/901AAAAAElFTkSuQmCC" InformativeScreenshot="5cc9a26834d5ea8efc2489142ca9d564.png" ScopeSelectorArgument="&lt;wnd app='soneto.exe' cls='#*' title='*Save*file*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:TimeoutScope DisplayName="Timeout Scope" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="TimeoutScope_1" ThrowExceptionAfter="[TimeSpan.FromSeconds(30)]" TimeoutMessage="Save button taking too long on ">
+              <ui:TimeoutScope.Body>
+                <ActivityAction x:TypeArguments="Activity">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,164.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                      <ui:InterruptibleDoWhile.Body>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,142.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NCheckState DisplayName="Check App State 'unchecked'" Exists="[saveButtonExists]" sap:VirtualizedContainerService.HintSize="256.8,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="5b802a78-b6da-496b-a705-471e4ffd4b8e" Timeout="3" Version="V3">
+                            <uix:NCheckState.IfExists>
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,166.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="387.2,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <TryCatch.Try>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Save" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="WindowMessages" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5b802a78-b6da-496b-a705-471e4ffd4b8e" Timeout="4" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="1556, 1023, 110, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='*' title='*Save' aaname='Save' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='*' title='*Save' aaname='Save' cls='Button' /&gt;" Guid="d1d42432-b407-4b95-ab08-75757771b721" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAlCAYAAACeVr0yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASlSURBVHhe7drfT1NXAMDxvS17mNmPkLDHPZiZbckSM7cs2RTrECcbIkbXiQ4pFYfIL4tTkB8qguIPJugiTatgMQ7cqAVRRMABFfBihdYBLf1B6YvGBxP+g+/urV3isGx7Wey9uQ+fl5Nzzr3Jt+UebvrK/Pw8KvlTQyrE30I+ffqUQCCgkonHjx9HD/no0SNsNhsdHR10dnaqYpjVasXlcv1zSKfTic/nU8Wwnp6efw85OTlJKBRSxbDe3l41pBKoIRVCDakQakiFUEMqhLxD+t2E7BbqairYu3ev6AgVVa30+wLMRJuvYPINOetm5t4NOn7MYEPKOj7TaNCsSiFlw34aRryM+6OsUTD5hpy6w4hlP58uyaC6bYBhacw9xOTAz5xu9TP2cMF8hZNvSMd1Bhp0vPlxKT9dH8Uljc0FCAY8uL1zzAYXzFc4+Yb02hE6ykh650O2lFziypD4vFww5571JHX5iSQmRhgaMd4cYKz7AkZDOtU2D8JUZL5rkLG2Y6TsMdE6NIF7qo/uC5VkieuSwusNHDbexL7gGrFCxoedadzOTpr36dmdkcmuXbkcqTPSOhIiEPk2TvS1cPl0AQUFu0WpfLEyi+JjFmztjVzYo2FFWQ/XR2fCc6d/b+G3gwms2N0qfij6uGGupSYzk22ZBeTli3t8m8GeoybODr74gYkFMg4pmRU5aK/eSe43y1n7dSrfV7bRJQRwS4cd933G7thoamoUFaNdtgZdTj2X+m5z12Jg6doTNHffxxNyc/faOWq3J1DSPs3I+FXqs7SkfZSC/lQTpotNNJVr2WY4jN44vOAeYoPMQz7HZaPtaDpr3l3KxoYJ+h/M4Ok6S122hjfi4oiLe4slr33A+lwxpOMBE0MmcuPTqW3ppd/TzTXLGbLTGrjj9uMVGqnSruK9V1+PrI1YrWfrmdvRr/+SKSdk0IfrlhljQQJv65q5+ms9p3QFZKQeolEYZkSwcnxzGiUVUsggPpedWwcS2F7VzLHaMs5V5bChZoBJX5C5cMhsNiWWcl4QxLUCgmT8IS6PP/r1XzL5hnQJuLt/oXlsFqdPGptipP0EVanLeL/ISoe5lPwdeXy100j/7DRBx3kKVyWzq1AKGWJuZgKPLZ/t+n18t17HweJyTovPS19wTjxItVGv20TqJ1p+uDLOTEAci3YPMUS+IaeHcXaexJBtoDCviKKiHHbo0knekkX11THu913kuCGL5HUb0RuKKCzNY+NyDTuLn4UMBT2EHrZQti2Z1Su17ChrCv8vGgzvL9BnKqVkczKfJ+nJzy8U9xevccLM+RuOF+8lBsj4T6uLPwQLNevXkSa91ZFoc8LPMI9fOgQ56b14iPKt4nhSMhp9BUXZeZwxi4eh8MuCZwcla414UNpXSYnFHtk3YqqXblM5meK+X/61v76SAwvnxQjZhvR6vTgcjkX5/bH5LPu/yDakyWQiPj5+UdKPkaKtUyrZhpROkWazeVHSD8airVMqGT8jVc9TQyqEGlIh1JAKoYZUiP8UcnBwkNHRUVUM6+rqWjzkkydPsNvt4ZCq2Ce9JIkaUiVfakiFUEMqhBpSEeb5E1ROs42t/901AAAAAElFTkSuQmCC" InformativeScreenshot="5cc9a26834d5ea8efc2489142ca9d564.png" ScopeSelectorArgument="&lt;wnd app='soneto.exe' cls='#*' title='*Save*file*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                </TryCatch>
+                              </Sequence>
+                            </uix:NCheckState.IfExists>
+                            <uix:NCheckState.IfNotExists>
+                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </uix:NCheckState.IfNotExists>
+                            <uix:NCheckState.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="1556, 1023, 110, 33" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='*' title='*Save' aaname='Save' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='*' title='*Save' aaname='Save' cls='Button' /&gt;" Guid="2567c01c-0201-4415-9784-c79b3540d17d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAlCAYAAACeVr0yAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASwSURBVHhe7drfT1NXAMBxX5ZlS+Z+hYQ97sHNbEuWmLll2aZYhzjZADG6TlSkVBwivyxOQX6oCAgqE3SRptViWRzoqPizTsEhCNpaaatCf//KtmTLZsZ/8N1tZcmGJZkPS7k39+HzcnLOuTf5Fs6hYc7k5CQy8ZNDSsS/Qv7y+5+Y7L9x5q5MDOzhh/FDWgN/8GyNmzk7XTIR2H3lZzmkFPynkGs6fehvBGWzTJM5IDR6gpA15wNEIhHZLDN8P8zzdY8aySFFTA4pEXJIiZBDSoQ0QvpdRIaNtDbWsm3bNsFeauu7GfAF8MSbL0HiDxl04bl9iXNf5ZKZsZz3FQoUizPIyNxB+6iXMX+cNRIk/pDj1xk17uC9ubk09AwyEh1zDfFg8BsOdfux3ps2X6LEH9J2gcF2FS++U8XXF27hjI6FA4QCblzeMMHQtPkSJf6Q3mEs56pJe+Ut1lSe5NSQcF5Om3PbdIDWklRSU6doOtBeHsRqPo5Wk0NDnxvL+NR85w2sPU1kbNXRPWTHNd6P+Xgd+cK6tNh6DXu0lxme9oxEk8BlZwKX4zyd29Vsyc1j8+Yi9rZq6R6NEJj6abT3d/HtoVJKS7cIsvhoUT4VTUb6ejs4vlXBwuofuHDLE5s78WMX3+9KYeGWbuFD0c8lfTONeXmsyyuluETY4/Nctu7TceTG4x+YRJJAyKigwEZvwyaKPlvAsk+z2FDXw0VLAFf0suO6g/V6HwZDh6AC5fylqArbONl/lZtGDfOWtdBpvoM74uLm2aM0r0+hsneC0bHTtOUryX47A/VBA7oTBgw1StZp9qDWjkx7h8SSSMh/cPbRsy+Hpa/OY2W7nYG7HtwXj9BaoOCFpCSSkl5i7jNvsqJICGm7i31IR1FyDs1d1xhwmzlrPExBdjvXXX68lg7qlYt5/ennptZOWaJm7eGr8Z+fINILGfLhvKJHW5rCy6pOTp9p46CqlNys3XRYRhi1mNi/OpvK2mjIED7nMFd2prC+vpOm5mqO1heS2TjIA1+IcCxkAatSqzhmsQhrLViixu7hdPvjPz9BxB/SacFl/o5OaxCHLzo2zmhvC/VZ83mj3MQ5fRUlG4v5ZJOWgeAEIdsxyhans7ksGjJC2GPH3VfCevV2vlihYldFDYeE89IXCgsXqR7aVKvIelfJl6fG8ASEsXjvMAuIP+TECI7zB9AUaCgrLqe8vJCNqhzS1+TTcNrKnf4T7Nfkk758JWpNOWVVxaxcoGBTxaOQkZCbyL0uqtels2SRko3VhtjfoqHY/hb6dVVUrk7nwzQ1JSVlwv7CM1r0HLtke/xdEkgCv1qd3LcYaVyxnOzotzpRysLYGeb2Ry9BDq6d2E3NWmE8LR2FupbygmIO64XLUOzLgkcXJVOjcFHaXkelcXhq3ynj1zDrasgT9v347/3VdeycPi/BRB/S6/Vis9lm5PfPrrPs/yL6kDqdjuTk5BmZTKa466RG9CGjt0i9Xj8jh8MRd53USOCMlEXJISVCDikRckiJeOKQr7V4SO3wymaZD456earqCf5BWTb7zRhy4qeHZBpCpOmDMhE4efvX+CFl4iWHlAg5pETIISVhkr8A37EPnU+ZHlYAAAAASUVORK5CYII=" InformativeScreenshot="02a8442cf7324acaefa951af829e742e.png" ScopeSelectorArgument="&lt;wnd app='soneto.exe' cls='#*' title='Save*file' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                            </uix:NCheckState.Target>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </uix:NCheckState>
+                        </Sequence>
+                      </ui:InterruptibleDoWhile.Body>
+                      <ui:InterruptibleDoWhile.Condition>
+                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="saveButtonExists" />
+                      </ui:InterruptibleDoWhile.Condition>
+                      <ui:InterruptibleDoWhile.CurrentIndex>
+                        <OutArgument x:TypeArguments="x:Int32" />
+                      </ui:InterruptibleDoWhile.CurrentIndex>
+                      <ui:InterruptibleDoWhile.MaxIterations>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:InterruptibleDoWhile.MaxIterations>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:InterruptibleDoWhile>
+                  </Sequence>
+                </ActivityAction>
+              </ui:TimeoutScope.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:TimeoutScope>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="98, 29, 1223, 784" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHCSURBVDhPYxg6gJGRkVmeh03XUZwryFaM01eGi0UdKkUA8IhomRnZzN7rq/vuabDyP2Q8wURsAVQVFsDEwsWo7z85MTD2N7KmEx5y9/a5yl6+G6D0daKJ2EIGBlYOMQZ2HkUwBjoTrJlTQJHRufCyclDVv4fBqmCNh93kbmjwsRmC5YGAlYmRQ4WXVZuBQVzdlzGw4x8IM6jYFgGdrMHoWf0UxK8MCPwF0vwkSPmvIg+rJlQvJmA0Dl8ENsQseiWjR+UjEJvdIevUJBvlnSADQE6GKsUBWNgFGWT0Ixgd886ADfJr+cbGI6i2wEpyE3EGAAEowMCaQdg+6yhIrFJHqA1kwOMg5T9K+LzAIKLoyBjQ8RduABAzSOuFS/NwqD0MVAKHwxF3uZs6AuwmUB0MjMB4UuBhBaYFRiZWRpeS62CNlgmbGI3DFoDZXrUvWNg4hJJVBPJBBsDwKU/5B3tdZC/e8FN8D0kHipZZYA2+TZ8Y2LklgdEqwuhd9xosZhw6H2SbhxR30DF3udvIBoFwsaZgPQMDM6sQUJMUAwubCNhtIMDMKggWA2EEYARGpYGdGGeItShnoBw3iw5UfEABAwMAOQypOoSTH3YAAAAASUVORK5CYII=" InformativeScreenshot="2914d24c2df62858a5ce36aa118a4f8e.png" Selector="&lt;wnd app='soneto.exe' cls='*' title='*Save*' /&gt;" Title="Save 5010 837I EDI invoice file" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
