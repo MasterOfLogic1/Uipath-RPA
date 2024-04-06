@@ -1,4 +1,0 @@
-KeyNameOnConfig|serviceName|SubmitterId|Office
-UserA|Adaptive Waiver|R824|A_Jeffersonville
-UserB|Adaptive PA|R894|A_Jeffersonville
-UserC|All HAH|P981|H_New Albany

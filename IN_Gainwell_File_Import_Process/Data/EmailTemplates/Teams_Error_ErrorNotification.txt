@@ -1,3 +1,0 @@
-ProcessName Error Notification ReportDate :
-
-The process ended on MachineName Machine with error errorMessage.
