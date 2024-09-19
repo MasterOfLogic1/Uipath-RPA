@@ -205,4 +205,7 @@ End If
 
 '---------------------------------------------------------------------------
 '-------Convert datarow to a dictionary------------
-row.Table.Columns.Cast(Of DataColumn)().Zip(row.ItemArray, Function(c, v) New With {.ColumnName = c.ColumnName, .Value = v}).ToDictionary(Function(item) item.ColumnName, Function(item) item.Value)																																											
+row.Table.Columns.Cast(Of DataColumn)().Zip(row.ItemArray, Function(c, v) New With {.ColumnName = c.ColumnName, .Value = v}).ToDictionary(Function(item) item.ColumnName, Function(item) item.Value)
+
+Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),"Automation","OhioMediaidPortalDataExtractionDispatcher","Temps")
+																																															
